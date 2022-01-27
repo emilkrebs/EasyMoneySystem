@@ -1,0 +1,11 @@
+name: EasyMoneySystem
+version: '${project.version}'
+main: org.qeston.easymoneysystem.main.Main
+api-version: 1.18
+commands:
+  pay:
+    description: "Pay another player a amount of money"
+
+  bal:
+    aliases: balance
+    description: "Get you or others balance"

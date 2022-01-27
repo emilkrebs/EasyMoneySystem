@@ -1,0 +1,10 @@
+name: Moneysystem
+version: '1.0-SNAPSHOT'
+main: org.qeston.moneysystem.main.Main
+api-version: 1.18
+commands:
+  pay:
+    description: "Pay another player a amount of money"
+
+  bal:
+    aliases: balance
