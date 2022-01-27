@@ -6,6 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.qeston.easymoneysystem.main.Main;
+import org.qeston.easymoneysystem.utils.MoneySystem;
 
 import static org.qeston.easymoneysystem.main.Main.color;
 
@@ -18,14 +19,14 @@ public class PayCommand implements CommandExecutor {
             if(args.length == 2){
                 Player receiver = Bukkit.getPlayer(args[0]);
                 if(receiver == null) {
-                    sender.sendMessage("&cPlayer was not found");
+                    sender.sendMessage("Player was not found");
                     return false;
                 }
                 if(isInteger(args[1])){
                     int amount = Integer.parseInt(args[1]);
-                    Main.moneySystem.transfer(player, receiver, amount);
-                    sender.sendMessage(color("&7You have sent &a" + amount + "$ &7to &a" + receiver.getName() + "&7!"));
-                    receiver.sendMessage(color("&7You have received &a" + amount + "$ &7from &a" + sender.getName() + "&7!"));
+                    MoneySystem.transfer(player, receiver, amount);
+                    sender.sendMessage(color("&7You have sent &a" + MoneySystem.getPriceFromNumber(amount) + " &7to &a" + receiver.getName() + "&7!"));
+                    receiver.sendMessage(color("&7You have received &a" + MoneySystem.getPriceFromNumber(amount) + " &7from &a" + sender.getName() + "&7!"));
 
                     return true;
                 }
@@ -35,14 +36,15 @@ public class PayCommand implements CommandExecutor {
             if(args.length == 2){
                 Player receiver = Bukkit.getPlayer(args[0]);
                 if(receiver == null) {
-                    sender.sendMessage("&cPlayer was not found");
+                    sender.sendMessage("Player was not found");
                     return false;
                 }
                 if(isInteger(args[1])){
                     int amount = Integer.parseInt(args[1]);
-                    Main.moneySystem.addMoney(receiver, amount);
-                    receiver.sendMessage(color("&7You have received &a" + amount + "$ &7from &aServer &7!"));
+                    MoneySystem.addMoney(receiver, amount);
 
+                    sender.sendMessage(color("&7You have sent &a" + MoneySystem.getPriceFromNumber(amount) + " &7to &a" + receiver.getName() + "&7!"));
+                    receiver.sendMessage(color("&7You have received &a" + MoneySystem.getPriceFromNumber(amount) + " &7from &aServer &7!"));
                     return true;
                 }
             }

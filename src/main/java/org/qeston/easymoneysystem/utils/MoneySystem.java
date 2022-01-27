@@ -8,27 +8,27 @@ import static org.qeston.easymoneysystem.utils.ScoreboardUtil.setScoreboard;
 public class MoneySystem {
     public static String keyName = "money";
 
-    public void transfer(Player sender, Player receiver, int amount){
+    public static void transfer(Player sender, Player receiver, int amount){
         removeMoney(sender, amount);
         addMoney(receiver, amount);
     }
 
 
-    public int getBalance(Player player){
+    public static int getBalance(Player player){
         return PlayerPrefs.getInt(player, keyName);
     }
 
-    public String getBalanceString(Player player){
+    public static String getBalanceString(Player player){
         return getPriceFromNumber( PlayerPrefs.getInt(player, keyName));
     }
 
-    public void addMoney(Player player, int amount){
+    public static void addMoney(Player player, int amount){
         int newBalance = PlayerPrefs.getInt(player, keyName) + amount;
         PlayerPrefs.setInt(player, keyName, newBalance);
         setScoreboard(player);
     }
 
-    public void removeMoney(Player player, int amount){
+    public static void removeMoney(Player player, int amount){
         int newBalance = PlayerPrefs.getInt(player, keyName) - amount;
         PlayerPrefs.setInt(player, keyName, newBalance);
         setScoreboard(player);

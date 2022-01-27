@@ -1,6 +1,6 @@
-name: Moneysystem
+name: EasyMoneySystem
 version: '1.0-SNAPSHOT'
-main: org.qeston.moneysystem.main.Main
+main: org.qeston.easymoneysystem.main.Main
 api-version: 1.18
 commands:
   pay:
@@ -8,3 +8,4 @@ commands:
 
   bal:
     aliases: balance
+    description: "Get you or others balance"
