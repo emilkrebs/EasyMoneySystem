@@ -23,13 +23,16 @@ public class PlayerListeners implements Listener {
 
     @EventHandler
     public void OnDeath(PlayerDeathEvent event){
-        Player killed = event.getEntity();
-        Player killer = killed.getKiller();
+        if(event.getEntity() instanceof Player){
+            Player killed = event.getEntity();
+            Player killer = killed.getKiller();
 
-        int amount = MoneySystem.getBalance(killed);
-        MoneySystem.transfer(killed, killer, amount);
+            int amount = MoneySystem.getBalance(killed);
+            MoneySystem.transfer(killed, killer, amount);
 
-        killer.sendMessage(color("&7You have received &a" + amount + "$ &7for killing &a" + killed.getName() + "&7!"));
-        killed.sendMessage(color("&cYou have lost all your money to &e" + killed.getName() + "&c!"));
+            killer.sendMessage(color("&7You have received &a" + amount + "$ &7for killing &a" + killed.getName() + "&7!"));
+            killed.sendMessage(color("&cYou have lost all your money to &e" + killed.getName() + "&c!"));
+
+        }
     }
 }

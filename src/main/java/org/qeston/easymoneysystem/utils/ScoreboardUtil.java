@@ -13,7 +13,7 @@ public class ScoreboardUtil {
 
     public static void setScoreboard(Player player) {
         Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
-        Objective sidebar = board.registerNewObjective("Sidebar", "dummy", "Money");
+        Objective sidebar = board.registerNewObjective("Sidebar", "dummy", "EasyMoney");
         sidebar.setDisplaySlot(DisplaySlot.SIDEBAR);
         Score score = sidebar.getScore( ChatColor.GREEN + MoneySystem.getBalanceString(player));
         score.setScore(10);
