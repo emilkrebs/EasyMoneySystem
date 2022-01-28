@@ -16,7 +16,7 @@ public class PlayerListeners implements Listener {
     @EventHandler
     public void OnJoin(PlayerJoinEvent event){
         if(!PlayerPrefs.hasKey(event.getPlayer(), MoneySystem.keyName)){
-            PlayerPrefs.setInt(event.getPlayer(), MoneySystem.keyName, 1000);
+            PlayerPrefs.setInt(event.getPlayer(), MoneySystem.keyName, Main.config.getInt("startMoney"));
         }
         setScoreboard(event.getPlayer());
     }
