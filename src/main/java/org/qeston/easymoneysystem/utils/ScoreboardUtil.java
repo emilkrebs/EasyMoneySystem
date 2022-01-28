@@ -15,8 +15,11 @@ public class ScoreboardUtil {
         Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
         Objective sidebar = board.registerNewObjective("Sidebar", "dummy", "EasyMoney");
         sidebar.setDisplaySlot(DisplaySlot.SIDEBAR);
-        Score score = sidebar.getScore( ChatColor.GREEN + MoneySystem.getBalanceString(player));
-        score.setScore(10);
+
+        Score moneyText = sidebar.getScore(  ChatColor.AQUA + "" + ChatColor.BOLD +  "Money");
+        moneyText.setScore(9);
+        Score moneyAmount = sidebar.getScore( ChatColor.GREEN + MoneySystem.getBalanceString(player));
+        moneyAmount.setScore(8);
 
         Objective belowName = board.registerNewObjective("Belowname", "dummy", "Money");
         belowName.setDisplaySlot(DisplaySlot.BELOW_NAME);
@@ -24,4 +27,5 @@ public class ScoreboardUtil {
 
         player.setScoreboard(board);
     }
+
 }
