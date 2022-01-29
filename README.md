@@ -18,6 +18,6 @@ startMoney: 100 # The amount of money every new player gets
 ## Features
 - When a player gets killed all his money will be transfered to the killer
 - Everything is saved into .yml files to avoid loosing data on server crashes.
-- Every new player gets 1k
+- Every new player gets a specific amount of money 
 - Easy code
 
