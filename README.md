@@ -13,7 +13,7 @@ An easy spigot money system using [PlayerPrefs](https://github.com/emilkrebs/Pla
 
 ``pay <receiver> <amount>``  Pay another player a amount of your money
 
-``bal``  Get your current balance
+``bal``  Get your or others current balance
 
 ## Config
 
@@ -22,8 +22,8 @@ startMoney: 100 # The amount of money every new player gets
 
 ```
 ## Features
-- When a player gets killed all his money will be transferred to the killer
+- When a player gets killed all his money will be transferred to the killer.
 - Everything is saved into .yml files to avoid losing data on server crashes.
-- Every new player gets a specific amount of money 
-- Easy code
+- Every new player gets a specific amount of money.
+- Easy code.
 
