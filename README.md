@@ -27,3 +27,8 @@ startMoney: 100 # The amount of money every new player gets
 - Every new player gets a specific amount of money.
 - Easy code.
 
+## Known Issues
+
+None
+
+[Add Issue](https://github.com/emilkrebs/EasyMoneySystem/issues/new)
